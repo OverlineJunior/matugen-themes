@@ -1592,53 +1592,31 @@ output_path = '~/.config/yazi/theme.toml'
 
 ### Zen Browser
 
-1. Go to `about:config` and set these preferences:
-   - `toolkit.legacyUserProfileCustomizations.stylesheets` to `true`
-   - `zen.view.use-native-popup` to `true` (optional, for better UI)
+Make new template files and paste the content from [here](./templates/zen-userchrome.css) and [here](./templates/zen-usercontent.css) into the files.
 
-2. Find your profile directory by going to `about:support`. Under "Application Basics", find "Profile Directory" and click "Open Directory"
+Then replace `/path/to/template/` with the path to your previously created template files.
 
-3. Create a folder called `chrome` inside your profile directory
+```toml
+[templates.zen-userchrome]
+input_path = './templates/zen-userchrome.css'
+output_path = '~/.zen-profiles/abc123.default/chrome/zen-userChrome.css'
 
-4. Copy the template and add it to matugen:
-   ```toml
-   [templates.zen-usercontent]
-   input_path = "path/to/template/zen-usercontent.css"
-   output_path = "~/path/to/profile/chrome/zen-userContent.css"
-   ```
+[templates.zen-usercontent]
+input_path = './templates/zen-usercontent.css'
+output_path = '~/.zen-profiles/abc123.default/chrome/zen-userContent.css'
+```
 
-5. Copy the template and add it to matugen:
-   ```toml
-   [templates.zen-userchrome]
-   input_path = "path/to/template/zen-userchrome.css"
-   output_path = "~/path/to/profile/chrome/zen-userChrome.css"
-   ```
+1. Go to `about:config` and set `toolkit.legacyUserProfileCustomizations.stylesheets` to `true`.
+2. Find your profile directory at `about:support` and create a `chrome` folder inside it.
+3. Create `userContent.css` and `userChrome.css` in your `chrome` folder, importing the matugen files with absolute paths:
 
-6. Create `userContent.css` in your `chrome` folder and import the matugen colors:
    ```css
-   @import url("/home/username/path/to/profile/chrome/zen-userContent.css");
-   ```
-
-7. Create `userChrome.css` in your `chrome` folder and import the matugen colors:
-   ```css
-   @import url("/home/username/path/to/profile/chrome/zen-userChrome.css");
+   @import url("/home/user/.zen-profiles/abc123.default/chrome/zen-userContent.css");
+   @import url("/home/user/.zen-profiles/abc123.default/chrome/zen-userChrome.css");
    ```
 
 > [!WARNING]
-> Make sure the replaced paths are absolute (`/home/user`) instead of relative (`~/`)
-> Using relative paths will not import anything.
-
-#### Example `userContent.css` file
-
-```css
-@import url("/home/user/.zen-profiles/abc123.default/chrome/zen-userContent.css");
-```
-
-#### Example `userChrome.css` file
-
-```css
-@import url("/home/user/.zen-profiles/abc123.default/chrome/zen-userChrome.css");
-```
+> The paths in `@import` must be absolute, not relative.
 
 ### Zathura
 
