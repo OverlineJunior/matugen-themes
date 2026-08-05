@@ -111,6 +111,7 @@
 - [Spicetify Sleek (Spotify)](#spicetify-sleek)
 - [Starship](#starship)
 - [Sway](#sway)
+- [Swaybar](#swaybar)
 - [Television](#television)
 - [Telegram](#telegram)
 - [Tmux](#tmux)
@@ -1324,6 +1325,27 @@ Then, add this line to your `~/.config/sway/config` file:
 
 ```conf
 include colors.conf
+```
+
+### Swaybar
+
+Make a new template file and paste the content from [here](./templates/swaybar-colors.conf) into the file.
+
+Then replace `/path/to/template/` with the path to your previously created template file.
+
+```toml
+[config]
+# ...
+[templates.swaybar]
+input_path = 'path/to/template'
+output_path = '~/.config/sway/bar-colors.conf'
+post_hook = 'swaymsg reload'
+# ...
+```
+Then, add this line to your `~/.config/sway/config` file:
+
+```conf
+include bar-colors.conf
 ```
 
 ### SwayNC
