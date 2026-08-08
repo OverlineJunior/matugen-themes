@@ -627,6 +627,26 @@ output_path = '~/.config/vesktop/themes/midnight-discord.css'
 
 Then, activate the theme from vencord themes.
 
+### system24 Discord
+
+The system24 styling process is the exact same as Midnight:
+Make a new template file and paste the content from [here](./templates/system24.css) into the file.
+
+Then replace `/path/to/template/` with the path to your previously created template file.
+
+```toml
+[config]
+# ...
+[templates.vesktop]
+input_path = 'path/to/template'
+output_path = '~/.config/vesktop/themes/system24.css'
+```
+
+> [!NOTE]
+> ``output_path`` may be different if you are using Flatpak version of Vesktop.
+
+Then, activate the theme from vencord themes.
+
 ### Neovim
 
 Styling Neovim with matugen is an involved process due to working with plugins and various highlight groups. For information on how to leverage plugins for doing the "heavy-lifting", see [here](./templates/neovim).
