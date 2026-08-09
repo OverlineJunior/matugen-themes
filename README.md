@@ -112,6 +112,7 @@
 - [Starship](#starship)
 - [Sway](#sway)
 - [Swaybar](#swaybar)
+- [system24 Discord](#system24-discord)
 - [Television](#television)
 - [Telegram](#telegram)
 - [Tmux](#tmux)
@@ -1367,7 +1368,25 @@ Then import the `colors.css` to `~/.config/swaync/style.css`:
 ```css
 @import "colors.css";
 ```
+### system24 Discord
 
+The system24 styling process is the exact same as Midnight:
+Make a new template file and paste the content from [here](./templates/system24.css) into the file.
+
+Then replace `/path/to/template/` with the path to your previously created template file.
+
+```toml
+[config]
+# ...
+[templates.vesktop]
+input_path = 'path/to/template'
+output_path = '~/.config/vesktop/themes/system24.css'
+```
+
+> [!NOTE]
+> ``output_path`` may be different if you are using Flatpak version of Vesktop.
+
+Then, activate the theme from vencord themes.
 
 ### Telegram
 
