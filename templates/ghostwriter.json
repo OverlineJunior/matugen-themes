@@ -1,3 +1,4 @@
+// OUTPUT - .local/share/ghostwriter/themes/matugen.json
 {
     "dark": {
         "accent": "{{colors.primary.default.hex}}",
