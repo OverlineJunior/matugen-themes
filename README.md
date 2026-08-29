@@ -84,6 +84,7 @@
 - [Foot](#foot)
 - [Fuzzel](#fuzzel)
 - [Ghostty](#ghostty)
+- [Ghostwriter](#ghostwriter)
 - [Gnome-shell](#gnome-shell)
 - [GTK (3.0, 4.0)](#gtk)
 - [Helix](#helix)
@@ -390,6 +391,30 @@ Then, add this line to your `~/.config/ghostty/config`:
 ```ini
 theme = "Matugen"
 ```
+
+### Ghostwriter
+
+Make a new template file and paste the content from [here](./templates/ghostwriter.json) into the file.
+
+Then replace `/path/to/template/` with the path to your previously created template file.
+
+```toml
+[config]
+# ...
+[templates.ghostwriter]
+input_path = '/path/to/template/'
+output_path = '~/.local/share/ghostwriter/themes/Matugen.json'
+# ...
+```
+Then, change this line in your `~/.config/kde.org/ghostwriter.conf`:
+
+```conf
+[Style]
+...
+theme=Matugen
+...
+```
+Or change theme via GUI
 
 ### Gnome-shell
 
