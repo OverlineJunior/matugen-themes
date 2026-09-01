@@ -1547,6 +1547,7 @@ Then replace `/path/to/template/` with the path to your previously created templ
 [templates.vicinae]
 input_path = "path/to/template"
 output_path = "~/.local/share/vicinae/themes/matugen.toml"
+post_hook = "nohup vicinae server --replace >/dev/null 2>&1 &"
 # ...
 ```
 
